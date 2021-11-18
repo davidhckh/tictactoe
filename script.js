@@ -2,16 +2,27 @@ let crossFields = [];
 let circleFields = [];
 let currentShape = 'cross';
 let winnersFields = []
-const winningCombinations = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [6, 4, 2]
+const winningCombinations = [ 
+    [0, 1, 2, 0], /**last number is winning line id */
+    [3, 4, 5, 1],
+    [6, 7, 8, 2],
+    [0, 3, 6, 3],
+    [1, 4, 7, 4],
+    [2, 5, 8, 5],
+    [0, 4, 8, 6],
+    [6, 4, 2, 7]
 ]
+
+const setup = () => {
+    document.getElementById('line-0').style.transform = 'scaleX(0)'
+    document.getElementById('line-1').style.transform = 'scaleX(0)'
+    document.getElementById('line-2').style.transform = 'scaleX(0)'
+    document.getElementById('line-3').style.transform = 'rotate(90deg) scaleX(0)'
+    document.getElementById('line-4').style.transform = 'rotate(90deg) scaleX(0)'
+    document.getElementById('line-5').style.transform = 'rotate(90deg) scaleX(0)'
+    document.getElementById('line-6').style.transform = 'rotate(45deg) scaleX(0)'
+    document.getElementById('line-7').style.transform = 'rotate(135deg) scaleX(0)'
+}
                 
 const fillField = (field) => {
     if(!document.getElementById('field-' + field).classList.contains('disabled-td')) {
@@ -56,6 +67,7 @@ const checkWin= () => {
 
     if(winner){
         disableAllFields()
+        drawLine(winningCombinations[winningCombinations.indexOf(winnersFields)][3])
         return winner
     } else if(crossFields.length + circleFields.length == 9){
         disableAllFields()
@@ -64,7 +76,11 @@ const checkWin= () => {
 }
 
 const drawLine = (lineNo) => {
-
+    const line = document.getElementById('line-' + lineNo)
+    line.classList.remove('hide')
+    setTimeout(() => {
+        line.style.transform = line.style.transform.replace('scaleX(0)', 'scaleX(1)')
+    },0)
 }
 
 const disableAllFields = () => {

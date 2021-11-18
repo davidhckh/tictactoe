@@ -1,23 +1,27 @@
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh
+#game-div {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .hide {
     display: none;
 }
 
-img {
-    width: 100px;
+.player-info-container {
+    width: 50%;
+    border: 3px solid #2B2B2B;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 5px;
 }
 
-.shape {
-    position: absolute;
-    left: 17px;
-    top: 17px;
+.player-info-image {
+    height: 25px;
 }
+
+/*board*/
 
 .disabled-td {
     cursor: default!important;
@@ -27,7 +31,6 @@ img {
     background-color: rgb(0, 0, 0, 0) !important
 }
 
-/*board*/
 table {
     border-collapse: collapse;
 }
@@ -65,4 +68,17 @@ table tr:last-child td {
 
 table tr td:last-child {
     border-right: 0;
+}
+
+/*lines*/
+.horizontal-line {
+    height: 10px;
+    width: 399px;
+    position: absolute;
+    z-index: 1;
+    background: #2B2B2B;
+    left: 10px;
+    transition: transform 225ms ease-in-out;
+    transform: scaleX(0);
+    transform-origin: left;
 }
