@@ -108,9 +108,6 @@ const drawLine = (lineNo) => {
 
 const showWinnerContainer = (winner) => {
     const winnerContainer = document.getElementById('winning-container');
-    const winnerContainerImage = document.getElementById('winning-container-img');
-    const winnerTopLabel = document.getElementById('winning-container-top-label');
-    const winnerBottomLabel = document.getElementById('winning-container-bottom-label');
 
     /**animation */
     setTimeout(() => {
@@ -128,6 +125,10 @@ const showWinnerContainer = (winner) => {
 }
 
 const updateWinnerContainerGraphics = (winner) => {
+    const winnerContainerImage = document.getElementById('winning-container-img');
+    const winnerTopLabel = document.getElementById('winning-container-top-label');
+    const winnerBottomLabel = document.getElementById('winning-container-bottom-label');
+    
     if(winner == 'draw') {
         winnerContainerImage.classList.add('hide');
         winnerTopLabel.innerHTML = `It's a`;
