@@ -1,3 +1,10 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh
+}
+
 .hide {
     display: none;
 }
@@ -10,6 +17,14 @@ img {
     position: absolute;
     left: 17px;
     top: 17px;
+}
+
+.disabled-td {
+    cursor: default!important;
+}
+
+.disabled-td:hover {
+    background-color: rgb(0, 0, 0, 0) !important
 }
 
 /*board*/
@@ -27,6 +42,9 @@ td {
     border: 7px solid #2B2B2B;
     position: relative;
     cursor: pointer;
+    background-size: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 td:hover {
