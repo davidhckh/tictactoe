@@ -1,28 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+body {
+    background: #FAF8EF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100vh;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: bold;
+}
+
 #game-div {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
 .hide {
-    display: none;
+    display: none !important;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
 }
 
 .player-info-container {
-    width: 50%;
-    border: 3px solid #2B2B2B;
+    width: 100%;
+    background: #BBADA0;
     border-radius: 10px;
-    margin: 20px;
-    padding: 5px;
+    margin: 0 10px;
+    margin-bottom: 40px;
+    padding: 10px;
+    display: flex;
+}
+
+.player-info-container span {
+    font-size: 20px;
+    color: white;
+    margin-top: 2px;
+    width: 100%;
+    text-align: center;
 }
 
 .player-info-image {
     height: 25px;
+    margin-right: 10px;
 }
 
 /*board*/
-
 .disabled-td {
     cursor: default!important;
 }
@@ -42,7 +69,7 @@ tr {
 td {
     width: 133px;
     height: 133px;
-    border: 7px solid #2B2B2B;
+    border: 7px solid #BBADA0;
     position: relative;
     cursor: pointer;
     background-size: 100px;
@@ -76,9 +103,44 @@ table tr td:last-child {
     width: 399px;
     position: absolute;
     z-index: 1;
-    background: #2B2B2B;
+    background: #8C8178;
     left: 10px;
-    transition: transform 225ms ease-in-out;
+    transition: 225ms;
     transform: scaleX(0);
     transform-origin: left;
+}
+
+/*winning container*/
+#winning-container {
+    width: 420px;
+    height: 450px;
+    background: rgb(250, 248, 239, 1);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #8F7A66;
+    font-size: 20px;
+    z-index: 2;
+    margin-top: 90px;
+    transition-duration: 500ms;
+}
+
+#winning-container-img {
+    height: 160px;
+    margin: 40px;
+}
+
+#play-again-button {
+    margin: 30px;
+    padding: 10px 30px;
+    background: #8F7A66;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#play-again-button:hover {
+    background: #A58C77;
 }

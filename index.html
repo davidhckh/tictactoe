@@ -14,9 +14,13 @@
 
     <!--Game Info-->
     <div class="row">
+      <div id="o-player-info" class="player-info-container">
+        <img src="res/circle.png" class="player-info-image">
+        <span id="circle-player-wins">0</span>
+      </div>
       <div id="x-player-info" class="player-info-container">
         <img src="res/cross.png" class="player-info-image">
-        -
+        <span id="cross-player-wins">0</span>
       </div>
     </div>
 
@@ -41,15 +45,23 @@
     </table>
 
     <!--Winning Lines-->
-    <div id="line-0" class="hide horizontal-line" style="top: 147px;"></div>
-    <div id="line-1" class="hide horizontal-line" style="top: 290px;"></div>
-    <div id="line-2" class="hide horizontal-line" style="top: 433px;"></div>
-    <div id="line-3" class="hide horizontal-line" style="left: 65px; top: 92px;"></div>
-    <div id="line-4" class="hide horizontal-line" style="left: 205px; top: 92px;"></div>
-    <div id="line-5" class="hide horizontal-line" style="left: 352px; top: 92px;"></div>
-    <div id="line-6" class="hide horizontal-line" style="left: 67px; top: 150px;"></div>
-    <div id="line-7" class="hide horizontal-line" style="left: 350px; top: 150px;"></div>
-
+    <div id="line-0" class="horizontal-line" style="top: 148px;"></div>
+    <div id="line-1" class="horizontal-line" style="top: 289px;"></div>
+    <div id="line-2" class="horizontal-line" style="top: 433px;"></div>
+    <div id="line-3" class="horizontal-line" style="left: 65px; top: 88px;"></div>
+    <div id="line-4" class="horizontal-line" style="left: 208px; top: 88px;"></div>
+    <div id="line-5" class="horizontal-line" style="left: 352px; top: 88px;"></div>
+    <div id="line-6" class="horizontal-line" style="left: 67px; top: 149px;"></div>
+    <div id="line-7" class="horizontal-line" style="left: 350px; top: 150px;"></div>
   </div>
+
+  <!--Winning container-->
+  <div id="winning-container" class="hide">
+    <span id="winning-container-top-label">Player</span>
+    <img id="winning-container-img" src="res/circle.png">
+    <span id="winning-container-bottom-label">won!</span>
+    <div id="play-again-button" onclick="resetAll()">Play again</div>
+  </div>
+
 </body>
 </html>
